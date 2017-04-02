@@ -6,7 +6,7 @@
 	<link rel="icon" type="image/png" href="../static/img/favicon.png" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Material Dashboard by Creative Tim</title>
+	<title>i446 Info Page</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -29,7 +29,7 @@
 <body>
 
 	<div class="wrapper">
-	    <div class="sidebar" data-color="purple" data-image="../static/img/sidebar-1.jpg">
+	    <div class="sidebar" data-color="green" data-image="../static/img/sidebar-1.jpg">
 
 			<!--
 		        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
@@ -38,8 +38,8 @@
 		    -->
 
 			<div class="logo">
-				<a href="http://www.creative-tim.com" class="simple-text">
-					Creative Tim
+				<a href="/" class="simple-text">
+					i446.in
 				</a>
 			</div>
 
@@ -65,7 +65,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#">Table List</a>
+						<a class="navbar-brand" href="#">Home</a>
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
@@ -112,57 +112,179 @@
 <!--   CONTENIDO   -->
 	        <div class="content">
 	            <div class="container-fluid">
-	                <div class="row">
-                    
-                     <h1>Headlines TEST</h1>
 
-                     <h2>Currency</h2>
+<!--   Primera Fila   -->
+<div class="row"><!--  01 -->
+     <div class="col-md-3"></div>
+     <div class="col-md-6">
+          <h1>i446 INFO PAGE</h1>
+     </div>
+     <div class="col-md-3"></div>
+</div> <!--  01 -->
 
-                    <form>
-                         from: 
-                         <select name="currency_from">
-                              {% for currency in currencies %}
-                                  <option value="{{currency}}" {{'selected="selected"' if currency_from==currency}}>{{currency}}</option>
-                              {% endfor %}
-                         </select>
-                         to: 
-                         <select name="currency_to">
-                              {% for currency in currencies %}
-                                  <option value="{{currency}}" {{'selected="selected"' if currency_to==currency}}>{{currency}}</option>
-                              {% endfor %}
-                          </select>
-                              <input type="submit" value="Submit">
-                    </form>
+<!--   FIN - Primera Fila   -->
 
-                    1 {{currency_from}} = {{currency_to}} {{rate}}
+<!--  Titulo: Monedas -->
+     <div class="row">
+     <div class="col-md-1"></div>
+     <div class="col-md-5"><h2>Monedas</h2></div>
+     <div class="col-md-6"></div>
+     </div>
+<!--  Titulo: Monedas -->
 
 
-                  <h2>Current weather</h2>
-                  <form>
-                  <input type="text" name="city" placeholder="weather search">
-                  <input type="submit" value="Submit">
-                  </form>
+<!--   Segunda Fila   -->
+<div class="row"> <!--   02   -->
+
+<div class="col-md-1"><!--  Espacio --></div> 
+  
+     <div class="col-md-5"><!--  Columna Formulario -->
+
+          <!--  Formulario Monedas -->
+          
+          <form>
+          <div class="form-group label-floating">
+               <label for="sel1">From:</label>
+               <select class="form-control" id="sel1" name="currency_from">
+                    {% for currency in currencies %}
+                        <option value="{{currency}}" {{'selected="selected"' if currency_from==currency}}>{{currency}}</option>
+                    {% endfor %}
+               </select>
+
+               <label for="sel2">To:</label>
+               <select class="form-control" id="sel2" name="currency_to"> 
+                    {% for currency in currencies %}
+                        <option value="{{currency}}" {{'selected="selected"' if currency_to==currency}}>{{currency}}</option>
+                    {% endfor %}
+               </select>
+               <button type="submit" class="btn btn-primary pull-right">GET CHANGE!</button>
+          </div>
+          </form>
+          <!--  Formulario Monedas -->
+
+     </div><!--  Columna Formulario -->
+
+     <div class="col-md-5"><!--  Columna CARD -->
+         
+          <!--  CARD Monedas -->
+          <div class="card card-stats">
+               <div class="card-header" data-background-color="green">
+               <i class="material-icons">monetization_on</i>
+               </div>
+               <div class="card-content">
+                    <p class="category">Change</p>
+                    <h3 class="title">1 {{currency_from}} = {{currency_to}} {{rate}}</h3>
+               </div>
+               <div class="card-footer">
+                    <div class="stats">
+                         <i class="material-icons text-danger">warning</i> <a href="#pablo">Get More Info...</a>
+                    </div>
+               </div>
+          </div><!--  CARD Monedas -->
+
+     </div><!--  Columna CARD -->
+
+<div class="col-md-1"><!--  ESPACIO --></div>
+
+</div> <!--   02   -->
+
+<!--   FIN - Segunda Fila   -->
 
 
-                  <p>City: <b>{{weather.city}}, {{weather.country}}</b></p>
-                  <p>{{weather.description}} |{{weather.temperature}}&#8451;</p>
+<!--  Tercera Fila -->
+     <div class="row"><!--   03  -->
+     <div class="col-md-1"></div>
+     <div class="col-md-5"><h2>Current weather</h2></div>
+     <div class="col-md-6"></div>
+     </div><!--   03  -->
+<!--   FIN - Tercera Fila   -->
 
-                  <h2> 
+<!--  Cuarta Fila -->
+     <div class="row"><!--   04  -->
+          <div class="col-md-1"><!--  ESPACIO --></div>
+          <div class="col-md-5"><!--  Columna Formulario Searh Weather -->
+               
+               <!--  Formulario Searh Weather -->
+               <form>
+               <div class="form-group label-floating">
+                    <label class="control-label">Weather Searchl</label>
+                    <input type="text" name="city" class="form-control">
+                    <button type="submit" class="btn btn-primary pull-right">GET CHANGE!</button>
+               </div><!--  Formulario Searh Weather -->
+           </div>
+          </form>
+           <!--  Columna Formulario Searh Weather -->
 
-                        <a href="http://i446.in?publication=bbc">BBC</a>
-                        <a href="http://i446.in?publication=fox">FOX</a>
-                        <a href="http://i446.in?publication=cnn">CNN</a>
-                  </h2>
-                  {% for article in articles %}
-                       <b><a href="{{article.link}}">{{article.title}}</a></b><br />
-                       <i>{{article.published}}</i><br />
-                       <p>{{article.summary}}</p>
-                      <hr/>
-                 {% endfor %}                       
+          <div class="col-md-5">
 
-	                </div>
-	            </div>
-	        </div>
+               <!--  CARD Weather -->
+               <div class="card card-stats">
+                    <div class="card-header" data-background-color="blue">
+                    <i class="material-icons">cloud</i>
+                    </div>
+                    <div class="card-content">
+                         <p class="category">Change</p>
+                         <h3 class="title">
+                              City: <b>{{weather.city}}, {{weather.country}}</b>
+                              {{weather.description}} |{{weather.temperature}}&#8451;
+
+                         </h3>
+                    </div>
+                    <div class="card-footer">
+                         <div class="stats">
+                              <i class="material-icons text-danger">warning</i> <a href="#pablo">Get More Info...</a>
+                         </div>
+                    </div>
+               </div><!--  CARD Weather -->
+             </div>
+
+<div class="col-md-1"><!--  ESPACIO --></div>
+     </div><!--   04  -->
+<!--   FIN - Cuarta Fila   -->
+
+
+<!--   Quinta Fila   -->
+<div class="row"><!--   05  -->
+     <div class="col-md-1"><!--  ESPACIO --></div>
+
+     <div class="col-md-5">
+          <a href="/?publication=bbc" class="btn btn-info" role="button">BCC</a>
+          <a href="/?publication=cnn" class="btn btn-info" role="button">CNN</a>
+          <a href="/?publication=fox" class="btn btn-info" role="button">FOX</a>
+
+     </div>
+
+     <div class="col-md-5">
+     <!--  ESPACIO -->
+
+     </div>
+
+     <div class="col-md-1"><!--  ESPACIO --></div>
+
+</div><!--   05  -->
+<!--   FIN - Quinta Fila   -->
+
+<!--   Sexta Fila   -->
+<div class="row"><!--   06  -->
+     <div class="col-md-1"><!--  ESPACIO --></div>
+
+     <div class="col-md-10"><!--  Columna Feeds -->
+          <br><br>
+          {% for article in articles %}
+               <b><a href="{{article.link}}">{{article.title}}</a></b><br />
+               <i>{{article.published}}</i><br />
+               <p>{{article.summary}}</p>
+                <hr/>
+           {% endfor %} 
+
+     </div><!--  Columna Feeds -->
+
+
+     <div class="col-md-1"><!--  ESPACIO --></div>
+
+</div><!--   06  -->
+<!--   FIN - Sexta Fila   -->
+
 <!--   FIN CONTENIDO   -->
 
 <!--   FOOTER   -->
