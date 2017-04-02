@@ -50,7 +50,7 @@ def home():
 
     rate, currencies = get_rate(currency_from, currency_to)
     
-    return render_template("home.html", articles=articles,weather=weather,
+    return render_template("homepro.html", articles=articles,weather=weather,
                                         currency_from=currency_from, 
                                         currency_to=currency_to, 
                                         rate=rate,
